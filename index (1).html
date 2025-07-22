@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobbyist Professional Profiles</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Landing Page -->
+        <div id="landing-page" class="view">
+            <header class="landing-header">
+                <div class="container">
+                    <div class="flex justify-between items-center">
+                        <div class="logo">
+                            <h2>Jobbyist</h2>
+                        </div>
+                        <nav>
+                            <a href="#" class="nav-link">Sign In</a>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <main class="landing-main">
+                <div class="container">
+                    <div class="hero-section">
+                        <h1>Your Professional Profile, <br>Your Own .cv Domain</h1>
+                        <p class="hero-subtitle">Create a stunning professional profile site under your unique .cv subdomain. Stand out to employers with a clean, minimalist design that showcases your experience.</p>
+                        
+                        <div class="cta-buttons">
+                            <button class="btn btn--primary btn--lg" id="get-started-pro">
+                                <i class="fas fa-crown"></i>
+                                Get Started (Pro)
+                            </button>
+                            <button class="btn btn--outline btn--lg" id="try-free">
+                                Try Free (3 Days)
+                            </button>
+                        </div>
+
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-globe"></i>
+                                <span>Your own .cv domain</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Mobile responsive</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-upload"></i>
+                                <span>PDF resume upload</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="landing-footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <p>&copy; 2025 Jobbyist. All rights reserved.</p>
+                        <div class="footer-links">
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Builder Page -->
+        <div id="builder-page" class="view hidden">
+            <div class="builder-layout">
+                <aside class="builder-sidebar">
+                    <div class="sidebar-header">
+                        <h3>Profile Builder</h3>
+                        <button class="btn btn--outline btn--sm" id="back-to-landing">
+                            <i class="fas fa-arrow-left"></i>
+                            Back
+                        </button>
+                    </div>
+                    
+                    <nav class="builder-steps">
+                        <div class="step active" data-step="0">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-title">Upload Resume</div>
+                                <div class="step-desc">PDF or text upload</div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="1">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-title">Personal Info</div>
+                                <div class="step-desc">Name and contact</div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-title">Experience</div>
+                                <div class="step-desc">Work history</div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <div class="step-title">Skills</div>
+                                <div class="step-desc">Technical abilities</div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <div class="step-title">Preview</div>
+                                <div class="step-desc">Review and publish</div>
+                            </div>
+                        </div>
+                    </nav>
+                </aside>
+
+                <main class="builder-main">
+                    <div id="step-content"></div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Preview Page -->
+        <div id="preview-page" class="view hidden">
+            <div class="preview-header">
+                <div class="container">
+                    <div class="flex justify-between items-center">
+                        <h2>Profile Preview</h2>
+                        <div class="preview-actions">
+                            <button class="btn btn--outline" id="back-to-builder">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                            <button class="btn btn--primary" id="publish-profile">
+                                <i class="fas fa-globe"></i>
+                                Publish Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-content" id="profile-preview" aria-live="polite"></div>
+        </div>
+
+        <!-- Payment Page -->
+        <div id="payment-page" class="view hidden">
+            <div class="container">
+                <div class="payment-container">
+                    <h2>Complete Your Purchase</h2>
+                    <p>Your 3-day free trial has ended. Continue with a one-time payment of $15 to publish your professional profile.</p>
+                    
+                    <form id="payment-form" class="payment-form">
+                        <div class="form-group">
+                            <label for="card-number" class="form-label">Card Number</label>
+                            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry" class="form-label">Expiry Date</label>
+                                <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardholder" class="form-label">Cardholder Name</label>
+                            <input type="text" id="cardholder" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            Pay $15 & Publish Profile
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Page -->
+        <div id="success-page" class="view hidden">
+            <div class="container">
+                <div class="success-container">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Profile Published Successfully!</h2>
+                    <p>Your professional profile is now live and accessible to employers worldwide.</p>
+                    
+                    <div class="success-link">
+                        <label class="form-label">Your profile URL:</label>
+                        <div class="url-display">
+                            <span id="profile-url"></span>
+                            <button class="btn btn--outline btn--sm" id="copy-url">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="success-actions">
+                        <a href="#" id="view-profile" class="btn btn--primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Profile
+                        </a>
+                        <button class="btn btn--outline" id="create-another">
+                            Create Another Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Public Profile Page -->
+        <div id="profile-page" class="view hidden">
+            <div id="public-profile"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
